@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-TennisForEveryone-7ABB77D7-B7A2-450D-BB44-FF0B7B03639B")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TennisForEveryone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
