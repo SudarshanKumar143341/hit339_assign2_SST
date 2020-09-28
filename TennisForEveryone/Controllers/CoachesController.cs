@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
-    [Authorize]
+  //  [Authorize]
     public class CoachesController : Controller
     {
         private readonly ApplicationDbContext _context;
