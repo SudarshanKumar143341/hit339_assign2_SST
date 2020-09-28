@@ -190,3 +190,8 @@ C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcorea
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Coaches\Details.cshtml.g.cs
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Coaches\Edit.cshtml.g.cs
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Coaches\Index.cshtml.g.cs
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Schedules\Create.cshtml.g.cs
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Schedules\Delete.cshtml.g.cs
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Schedules\Details.cshtml.g.cs
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Schedules\Edit.cshtml.g.cs
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Schedules\Index.cshtml.g.cs
