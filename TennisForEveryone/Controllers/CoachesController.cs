@@ -7,21 +7,48 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TennisForEveryone.Data;
 using TennisForEveryone.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
+    [Authorize]
     public class CoachesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CoachesController(ApplicationDbContext context)
+        public CoachesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Coaches
         public async Task<IActionResult> Index()
         {
+            ApplicationUser usr = await _userManager.GetUserAsync(HttpContext.User);
+            var coachList = _context.Coach;
+
+            if (usr != null)
+            {
+                var userIsCoach = false;
+                foreach (var coach in coachList)
+                {
+                    if (usr.Email == coach.Email)
+                    {
+                        userIsCoach = true;
+                    }
+                }
+
+                if (userIsCoach)
+                {
+                    var x = await _context.Coach.FirstOrDefaultAsync(c => c.Email == usr.Email);
+                    List<Coach> caoch = new List<Coach>();
+                    caoch.Add(x);
+                    return View(caoch);
+                }
+            }
             return View(await _context.Coach.ToListAsync());
         }
 
