@@ -241,3 +241,4 @@ C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcorea
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationRole\EditRole.cshtml.g.cs
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationRole\EditUsersInRole.cshtml.g.cs
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationRole\Index.cshtml.g.cs
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\ScheduleView\Index.cshtml.g.cs
