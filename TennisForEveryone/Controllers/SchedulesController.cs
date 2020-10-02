@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using TennisForEveryone.Data;
 using TennisForEveryone.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
@@ -51,6 +52,7 @@ namespace TennisForEveryone.Controllers
             return View(await _context.Schedule.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin,Member,Coach")]
         // GET: Schedules/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -69,6 +71,7 @@ namespace TennisForEveryone.Controllers
             return View(schedule);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Schedules/Create
         public IActionResult Create()
         {
@@ -91,6 +94,7 @@ namespace TennisForEveryone.Controllers
             return View(schedule);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Schedules/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -107,6 +111,7 @@ namespace TennisForEveryone.Controllers
             return View(schedule);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Schedules/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -142,6 +147,7 @@ namespace TennisForEveryone.Controllers
             return View(schedule);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Schedules/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -160,6 +166,7 @@ namespace TennisForEveryone.Controllers
             return View(schedule);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Schedules/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

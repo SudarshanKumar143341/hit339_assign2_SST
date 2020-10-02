@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TennisForEveryone.Models.ViewModel.ScheduleViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>
+    Member schedules
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ScheduleDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoachName)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScheduleDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule)
+                </td>
+                <td>
+                    <a asp-area="" asp-controller="Coaches" asp-action="Details" asp-route-id="@item.CoachId">@Html.DisplayFor(modelItem => item.CoachName)</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

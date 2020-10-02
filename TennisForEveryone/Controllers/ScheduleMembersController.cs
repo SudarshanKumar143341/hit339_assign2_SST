@@ -176,38 +176,40 @@ namespace TennisForEveryone.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        
+               [Authorize(Roles = "Member")]
+                // GET: ScheduleMembers/Enroll/5
+                public async Task<IActionResult> Enroll(int? id)
+                {
+                    ApplicationUser usr = await GetCurrentUserAsync();
+                    if (id == null)
+                    {
+                        return NotFound();
+                    }
+                    var schedule = await _context.Schedule.FindAsync(id);
+                    if (schedule == null)
+                    {
+                        return NotFound();
+                    }
+                    ViewBag.userEmail = usr.Email;
+                    return View(schedule);
+                }
 
-        // GET: ScheduleMembers/Enroll/5
-        public async Task<IActionResult> Enroll(int? id)
-        {
-            ApplicationUser usr = await GetCurrentUserAsync();
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var schedule = await _context.Schedule.FindAsync(id);
-            if (schedule == null)
-            {
-                return NotFound();
-            }
-            ViewBag.userEmail = usr.Email;
-            return View(schedule);
-        }
 
-    
-        //POST: ScheduleMembers/Enroll/6
-        [HttpPost, ActionName("Enroll")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EnrollConfirmed([Bind("ScheduleId,MemberEmail")] ScheduleMembers scheduleMembers)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(scheduleMembers);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(scheduleMembers);
-        }
+                    //POST: ScheduleMembers/Enroll/6
+                    [HttpPost, ActionName("Enroll")]
+                    [ValidateAntiForgeryToken]
+                    public async Task<IActionResult> EnrollConfirmed([Bind("ScheduleId,MemberEmail")] ScheduleMembers scheduleMembers)
+                    {
+                        if (ModelState.IsValid)
+                        {
+                            _context.Add(scheduleMembers);
+                            await _context.SaveChangesAsync();
+                            return RedirectToAction(nameof(Index));
+                        }
+                       return View(scheduleMembers);
+                    }
+          
 
         private bool ScheduleMembersExists(int id)
         {

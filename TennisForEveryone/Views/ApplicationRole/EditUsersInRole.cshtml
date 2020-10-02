@@ -1,0 +1,49 @@
+﻿@model List<TennisForEveryone.Models.ViewModel.UserRoleViewModel>
+@{
+    ViewData["Title"] = "EditUsersInRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var roleId = ViewBag.roleId;
+}
+
+
+<form method="post">
+    <div>
+        <h3>Add or remove users from this roless</h3>
+    </div>
+
+
+    <div>
+        <h3>User List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th> User Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <input asp-for="@Model[i].Isselected" />
+                        <label class="form-check-label">
+                            @Model[i].Username
+                        </label>
+
+                    }
+
+
+                </tr>
+            </tbody>
+
+        </table>
+        <div>
+            <input type="submit" value="Update" />
+            <a asp-action="EditRole"
+               asp-route-Id="@roleId">Add Users or Remove Users</a>
+
+        </div>
+    </div>
+</form>
+

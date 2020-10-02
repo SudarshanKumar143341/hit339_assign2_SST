@@ -1,0 +1,49 @@
+﻿@model TennisForEveryone.Models.ViewModel.RoleViewModel
+@{
+    ViewData["Title"] = "EditRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditRole</h2>
+
+<form method="post">
+    <div>
+        <h3>Role Name</h3>
+    </div>
+
+
+    <div>
+        <h3>User List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th> User Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @if (Model.Users.Any())
+                    {
+                        foreach (var user in Model.Users)
+                        {
+                            <td>
+                                @user
+                            </td>
+                        }
+                    }
+
+                    else
+                    {
+                        <td>No users in this role.</td>
+                    }
+                </tr>
+            </tbody>
+
+        </table>
+        <div>
+            <a asp-action="EditUsersinRole" asp-controller="ApplicationRole"
+               asp-route-roleId="@Model.Id">Add Users or Remove Users</a>
+
+        </div>
+    </div>
+</form>
