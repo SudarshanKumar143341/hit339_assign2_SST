@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
-   [Authorize]
+  
     public class CoachesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -24,7 +24,7 @@ namespace TennisForEveryone.Controllers
             _userManager = userManager;
         }
 
-        [Authorize(Roles = "Member, Coach, Admin")]
+        
         // GET: Coaches
         public async Task<IActionResult> Index()
         {
@@ -53,7 +53,7 @@ namespace TennisForEveryone.Controllers
             return View(await _context.Coach.ToListAsync());
         }
 
-        [Authorize(Roles = "Coach, Member, Admin")]
+       
         // GET: Coaches/Details/5
         public async Task<IActionResult> Details(int? id)
         {
