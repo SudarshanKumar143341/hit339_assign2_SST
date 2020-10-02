@@ -72,14 +72,14 @@ namespace TennisForEveryone.Controllers
             return View(coach);
         }
 
-        [Authorize(Roles = "Coach, Member, Admin")]
+        [Authorize(Roles = "Coach, Admin")]
         // GET: Coaches/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        [Authorize(Roles = "Coach, Member, Admin")]
+        [Authorize(Roles = "Coach, Admin")]
         // POST: Coaches/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

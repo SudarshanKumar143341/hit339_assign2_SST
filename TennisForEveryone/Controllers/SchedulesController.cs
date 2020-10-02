@@ -52,7 +52,7 @@ namespace TennisForEveryone.Controllers
             return View(await _context.Schedule.ToListAsync());
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Member,Coach")]
         // GET: Schedules/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -22,7 +22,7 @@ namespace TennisForEveryone.Controllers
             _userManager = userManager;
         }
 
-        [Authorize(Roles = "Member")]
+        [Authorize(Roles = "Member, Admin")]
         public async Task<IActionResult> Index()
         {
             List<ScheduleViewModel> model = new List<ScheduleViewModel>();
