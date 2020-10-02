@@ -242,3 +242,4 @@ C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcorea
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\TennisForEveryone.csproj.CoreCompileInputs.cache
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\TennisForEveryone.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\TennisForEveryone.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sudar\OneDrive\Desktop\assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\ScheduleMembers\Enroll.cshtml.g.cs
