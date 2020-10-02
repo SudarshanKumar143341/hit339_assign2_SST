@@ -180,6 +180,17 @@ namespace TennisForEveryone.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize(Roles = "Coach")]
+        public IActionResult MySchedules()
+        {
+            // GET current User
+            var user = _userManager.GetUserName(User);
+
+            // Query db to match all records with same CoachEmail
+            var schedules = _context.Schedule.Where(m => m.CoachEmail == user);
+
+            return View("MySchedules", schedules);
+        }
         private bool CoachExists(int id)
         {
             return _context.Coach.Any(e => e.Id == id);

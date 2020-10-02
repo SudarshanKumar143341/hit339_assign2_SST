@@ -209,8 +209,19 @@ namespace TennisForEveryone.Controllers
                         }
                        return View(scheduleMembers);
                     }
-          
 
+        // GET /ScheduleMembers/Enrollments/5
+        [Authorize(Roles = "Member")]
+        public IActionResult MyEnrollments()
+        {
+            // GET Username
+            var user = _userManager.GetUserName(User);
+
+            // Query db records that match Username
+            var schedules = _context.ScheduleMembers.Where(m => m.MemberEmail == user);
+
+            return View("MyEnrollments", schedules);
+        }
         private bool ScheduleMembersExists(int id)
         {
             return _context.ScheduleMembers.Any(e => e.Id == id);

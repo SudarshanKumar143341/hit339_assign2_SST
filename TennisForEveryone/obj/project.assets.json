@@ -8246,11 +8246,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sudar\\OneDrive\\Desktop\\assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj",
+      "projectUniqueName": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\TennisForEveryone.csproj",
       "projectName": "TennisForEveryone",
-      "projectPath": "C:\\Users\\sudar\\OneDrive\\Desktop\\assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj",
+      "projectPath": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\TennisForEveryone.csproj",
       "packagesPath": "C:\\Users\\sudar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sudar\\OneDrive\\Desktop\\assign2_SST\\TennisForEveryone\\obj\\",
+      "outputPath": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
