@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TennisForEveryone.Models;
 using TennisForEveryone.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class ApplicationRoleController: Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
