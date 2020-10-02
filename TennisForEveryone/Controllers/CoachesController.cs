@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
-  //  [Authorize]
+   [Authorize]
     public class CoachesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -24,6 +24,7 @@ namespace TennisForEveryone.Controllers
             _userManager = userManager;
         }
 
+        [Authorize(Roles = "Member, Coach, Admin")]
         // GET: Coaches
         public async Task<IActionResult> Index()
         {
@@ -52,6 +53,7 @@ namespace TennisForEveryone.Controllers
             return View(await _context.Coach.ToListAsync());
         }
 
+        [Authorize(Roles = "Coach, Member, Admin")]
         // GET: Coaches/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -70,12 +72,14 @@ namespace TennisForEveryone.Controllers
             return View(coach);
         }
 
+        [Authorize(Roles = "Coach, Admin")]
         // GET: Coaches/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Coach, Admin")]
         // POST: Coaches/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -92,6 +96,7 @@ namespace TennisForEveryone.Controllers
             return View(coach);
         }
 
+        [Authorize(Roles = "Admin, Coach")]
         // GET: Coaches/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -108,6 +113,7 @@ namespace TennisForEveryone.Controllers
             return View(coach);
         }
 
+        [Authorize(Roles = "Admin, Coach")]
         // POST: Coaches/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -143,6 +149,7 @@ namespace TennisForEveryone.Controllers
             return View(coach);
         }
 
+        [Authorize(Roles = "Admin, Coach")]
         // GET: Coaches/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -161,6 +168,7 @@ namespace TennisForEveryone.Controllers
             return View(coach);
         }
 
+        [Authorize(Roles = "Admin, Coach")]
         // POST: Coaches/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

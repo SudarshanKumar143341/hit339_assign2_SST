@@ -39,8 +39,8 @@ namespace TennisForEveryone
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-          //  services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-          //      .AddEntityFrameworkStores<ApplicationDbContext>();
+         // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+           //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddDefaultUI()
@@ -49,7 +49,8 @@ namespace TennisForEveryone
 
             services.AddControllersWithViews();
             services.AddRazorPages();
-
+            services.AddAuthentication();
+            services.AddAuthorization();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
