@@ -1,6 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "s+gZAZdpf7you7WzxWzgVaOBaeS48kF2zwt5bFphEcEzbVeH2KkO7EsMwfc2tRKOQR43bbOZh3/BVsVolSlhYg==",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "TQAloH28y8t3NFBswsL8DvP4E4QZB4xlqBwSNKBh7RFTN0SpxFn6GirNV+8Q/Is0RNHgDBitBNgNaJqD8m0ISw==",
+=======
+  "dgSpecHash": "fRavtL/LJK7yWf5i3ob0dTZTpYIcbxYynOL02RimmRVjP3eWr4Ec39Rr16IPk8zuzqjaA2a7kVy6LkvcDGA8Dg==",
+>>>>>>> db891c0ef9ffe0e68d9060226bdc109d6753e24b
+>>>>>>> 8cfaac88fb2bc703ef4dbeb3ea5144617e19b43b
   "success": true,
   "projectFilePath": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\TennisForEveryone.csproj",
   "expectedPackageFiles": [
