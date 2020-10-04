@@ -92,5 +92,48 @@ namespace TennisForEveryone.Controllers
             return View(model);
 
         }
+
+        [HttpPost]
+        /*Added Http post request method called ‘EditUsersInRole’ 
+        to be able to assign roles to users. Such as Admin, Coach, Member.(Sandipa)*/
+        public async Task<IActionResult> EditUsersInRole(List<UserRoleViewModel> model, string roleId)
+        {
+            var role = await roleManager.FindByIdAsync(roleId);
+            if (role == null)
+            {
+                return NotFound();
+            }
+
+            for (int i = 0; i < model.Count; i++)
+            {
+                var user = await userManager.FindByIdAsync(model[i].UserId);
+                IdentityResult result = null;
+                if (model[i].Isselected && !(await userManager.IsInRoleAsync(user, role.Name)))
+                {
+
+                    result = await userManager.AddToRoleAsync(user, role.Name);
+                }
+                else if (!model[i].Isselected && await userManager.IsInRoleAsync(user, role.Name))
+                {
+                    result = await userManager.RemoveFromRoleAsync(user, role.Name);
+                }
+                else
+                {
+                    continue;
+                }
+
+                if (result.Succeeded)
+                {
+                    if (i < (model.Count - 1))
+                        continue;
+                    else
+                        return RedirectToAction("EditRole", new { id = roleId });
+
+                }
+            }
+
+
+            return RedirectToAction("EditRole", new { id = roleId });
+        }
     }
 }

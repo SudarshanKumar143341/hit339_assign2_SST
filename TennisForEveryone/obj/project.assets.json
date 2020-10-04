@@ -8240,25 +8240,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sudar\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\sandi\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\TennisForEveryone.csproj",
+      "projectUniqueName": "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj",
       "projectName": "TennisForEveryone",
-      "projectPath": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\TennisForEveryone.csproj",
-      "packagesPath": "C:\\Users\\sudar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\obj\\",
+      "projectPath": "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj",
+      "packagesPath": "C:\\Users\\sandi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST\\TennisForEveryone\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\sudar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\sandi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8340,16 +8339,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\sudar\\OneDrive\\Desktop\\Assign2_S2T\\TennisForEveryone\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
