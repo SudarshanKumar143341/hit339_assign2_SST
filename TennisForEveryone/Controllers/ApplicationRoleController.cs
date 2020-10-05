@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
-    [Authorize(Roles ="Admin")]
+
     public class ApplicationRoleController: Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -77,15 +77,15 @@ namespace TennisForEveryone.Controllers
                 var userRoleViewModel = new UserRoleViewModel
                 {
                     UserId = user.Id,
-                    Username = user.UserName
+                    UserName = user.UserName
                 };
                 if (await userManager.IsInRoleAsync(user, role.Name))
                 {
-                    userRoleViewModel.Isselected = true;
+                    userRoleViewModel.IsSelected = true;
                 }
                 else
                 {
-                    userRoleViewModel.Isselected = true;
+                    userRoleViewModel.IsSelected = true;
                 }
                 model.Add(userRoleViewModel);
             }
@@ -104,16 +104,20 @@ namespace TennisForEveryone.Controllers
                 return NotFound();
             }
 
+
+            //Dont know how to fix this error to add users to role
+            //ArgumentNullException: Value cannot be null. (Parameter 'user')
+           // Microsoft.AspNetCore.Identity.UserManager<TUser>.IsInRoleAsync(TUser user, string role)
             for (int i = 0; i < model.Count; i++)
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);
                 IdentityResult result = null;
-                if (model[i].Isselected && !(await userManager.IsInRoleAsync(user, role.Name)))
+                if (model[i].IsSelected && !(await userManager.IsInRoleAsync(user, role.Name)))
                 {
 
                     result = await userManager.AddToRoleAsync(user, role.Name);
                 }
-                else if (!model[i].Isselected && await userManager.IsInRoleAsync(user, role.Name))
+                else if (!model[i].IsSelected && await userManager.IsInRoleAsync(user, role.Name))
                 {
                     result = await userManager.RemoveFromRoleAsync(user, role.Name);
                 }
