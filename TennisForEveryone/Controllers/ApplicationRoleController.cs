@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TennisForEveryone.Controllers
 {
-    [Authorize(Roles ="Admin")]
+
     public class ApplicationRoleController: Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -104,6 +104,10 @@ namespace TennisForEveryone.Controllers
                 return NotFound();
             }
 
+
+            //Dont know how to fix this error to add users to role
+            //ArgumentNullException: Value cannot be null. (Parameter 'user')
+           // Microsoft.AspNetCore.Identity.UserManager<TUser>.IsInRoleAsync(TUser user, string role)
             for (int i = 0; i < model.Count; i++)
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);
