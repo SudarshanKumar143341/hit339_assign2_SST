@@ -61,6 +61,40 @@ namespace TennisForEveryone.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+            [Display(Name = "First Name")]
+            public string Fname { get; set; }
+
+            [Display(Name = "Last Name")]
+            [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+            [Required]
+            public string Lname { get; set; }
+
+            [Display(Name = "Age")]
+            [Required]
+            public int Age { get; set; }
+
+            [Display(Name = "Street No")]
+            [Required]
+            public int StreetNumber { get; set; }
+
+            [Display(Name = "Street Name")]
+            [Required]
+            public string StreetName { get; set; }
+
+            [Display(Name = "Suburb")]
+            [Required]
+            public string Suburb { get; set; }
+
+            [Display(Name = "Country")]
+            [Required]
+            public string Country { get; set; }
+
+            [Display(Name = "Pincode")]
+            [Required]
+            public int Pincode { get; set; }
+            public string Name { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -75,7 +109,8 @@ namespace TennisForEveryone.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser { Id = Input.Email, UserName = Input.Email, Email = Input.Email, Fname = Input.Fname, Lname = Input.Lname, StreetNumber = Input.StreetNumber, StreetName = Input.StreetName, Suburb = Input.Suburb, Country = Input.Country, Pincode = Input.Pincode, Age = Input.Age };
+               
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
