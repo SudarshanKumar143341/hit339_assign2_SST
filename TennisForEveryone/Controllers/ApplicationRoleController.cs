@@ -77,15 +77,15 @@ namespace TennisForEveryone.Controllers
                 var userRoleViewModel = new UserRoleViewModel
                 {
                     UserId = user.Id,
-                    Username = user.UserName
+                    UserName = user.UserName
                 };
                 if (await userManager.IsInRoleAsync(user, role.Name))
                 {
-                    userRoleViewModel.Isselected = true;
+                    userRoleViewModel.IsSelected = true;
                 }
                 else
                 {
-                    userRoleViewModel.Isselected = true;
+                    userRoleViewModel.IsSelected = true;
                 }
                 model.Add(userRoleViewModel);
             }
@@ -108,12 +108,12 @@ namespace TennisForEveryone.Controllers
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);
                 IdentityResult result = null;
-                if (model[i].Isselected && !(await userManager.IsInRoleAsync(user, role.Name)))
+                if (model[i].IsSelected && !(await userManager.IsInRoleAsync(user, role.Name)))
                 {
 
                     result = await userManager.AddToRoleAsync(user, role.Name);
                 }
-                else if (!model[i].Isselected && await userManager.IsInRoleAsync(user, role.Name))
+                else if (!model[i].IsSelected && await userManager.IsInRoleAsync(user, role.Name))
                 {
                     result = await userManager.RemoveFromRoleAsync(user, role.Name);
                 }

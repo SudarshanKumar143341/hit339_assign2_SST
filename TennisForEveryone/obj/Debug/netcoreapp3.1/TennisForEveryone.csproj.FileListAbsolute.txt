@@ -735,3 +735,5 @@ C:\Users\Tommy\Desktop\git\hit339_assign2_SST\TennisForEveryone\obj\Debug\netcor
 C:\Users\Tommy\Desktop\git\hit339_assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\TennisForEveryone.dll
 C:\Users\Tommy\Desktop\git\hit339_assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\TennisForEveryone.pdb
 C:\Users\Tommy\Desktop\git\hit339_assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\TennisForEveryone.genruntimeconfig.cache
+C:\Users\Tommy\Desktop\git\hit339_assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+C:\Users\Tommy\Desktop\git\hit339_assign2_SST\TennisForEveryone\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
