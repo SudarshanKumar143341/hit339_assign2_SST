@@ -62,6 +62,7 @@ namespace TennisForEveryone.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public async Task<IActionResult> EditUsersInRole(string roleId)
         {
             ViewBag.roleId = roleId;
@@ -77,7 +78,8 @@ namespace TennisForEveryone.Controllers
                 var userRoleViewModel = new UserRoleViewModel
                 {
                     UserId = user.Id,
-                    UserName = user.UserName
+                    UserName = user.UserName,
+          
                 };
                 if (await userManager.IsInRoleAsync(user, role.Name))
                 {
@@ -92,7 +94,6 @@ namespace TennisForEveryone.Controllers
             return View(model);
 
         }
-
         [HttpPost]
         /*Added Http post request method called ‘EditUsersInRole’ 
         to be able to assign roles to users. Such as Admin, Coach, Member.(Sandipa)*/
@@ -103,18 +104,17 @@ namespace TennisForEveryone.Controllers
             {
                 return NotFound();
             }
-
-
             //Dont know how to fix this error to add users to role
             //ArgumentNullException: Value cannot be null. (Parameter 'user')
-           // Microsoft.AspNetCore.Identity.UserManager<TUser>.IsInRoleAsync(TUser user, string role)
+            // Microsoft.AspNetCore.Identity.UserManager<TUser>.IsInRoleAsync(TUser user, string role) -- Fixed the error was an error in not populating the model through the view - Tommy
             for (int i = 0; i < model.Count; i++)
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);
+
                 IdentityResult result = null;
+
                 if (model[i].IsSelected && !(await userManager.IsInRoleAsync(user, role.Name)))
                 {
-
                     result = await userManager.AddToRoleAsync(user, role.Name);
                 }
                 else if (!model[i].IsSelected && await userManager.IsInRoleAsync(user, role.Name))
@@ -131,8 +131,7 @@ namespace TennisForEveryone.Controllers
                     if (i < (model.Count - 1))
                         continue;
                     else
-                        return RedirectToAction("EditRole", new { id = roleId });
-
+                        return RedirectToAction("EditRole", new { Id = roleId });
                 }
             }
 
