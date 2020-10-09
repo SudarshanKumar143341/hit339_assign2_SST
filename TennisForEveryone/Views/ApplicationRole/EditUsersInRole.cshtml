@@ -8,24 +8,14 @@
 }
 
 
-<form method="post">
-    <div>
-        <h3>Add or remove users from this roles</h3>
-    </div>
-
-
-    <div>
-        <h3>User List</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th> User Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    @for (int i = 0; i < Model.Count; i++)
-                    {
+    <form method="post">
+           <div class="card mb-3 mt-2">
+            <div class="card-header">
+                <h4>Add or remove users from this roles</h4>
+            </div>
+            <div class="card-body">
+                @for (int i = 0; i < Model.Count; i++)
+                {
                     <div class="form-check m-1">
                         <input type="hidden" asp-for="@Model[i].UserId" />
                         <input type="hidden" asp-for="@Model[i].UserName" />
@@ -34,19 +24,12 @@
                             @Model[i].UserName
                         </label>
                     </div>
-                    }
-
-
-                </tr>
-            </tbody>
-
-        </table>
-        <div>
-            <input type="submit" value="Update" />
-            <a asp-action="EditRole"
-               asp-route-Id="@roleId">Add Users or Remove Users</a>
-
+                }
+            </div>
+            <div class="card-footer">
+                <input type="submit" value="Update" class="btn btn-primary"/>
+                <a asp-action="EditRole" asp-route-Id="@roleId" class="btn btn-primary">Cancel</a>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 

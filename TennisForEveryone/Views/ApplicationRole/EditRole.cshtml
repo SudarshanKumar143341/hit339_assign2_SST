@@ -62,7 +62,7 @@
     </div>
     <div class="card mb-3 mt-2">
         <div class="card-header">
-            Users in this role
+            <h4>Users in this role</h4>
         </div>
         <div class="card-body">
             <h5 class="card-title">
@@ -80,13 +80,8 @@
             </h5>
         </div>
         <div class="card-footer">
-            <a asp-controller="application" asp-action="EditRole" class="btn btn-primary">Add User</a>
-            <a asp-controller="application" asp-action="CreateRole" class="btn btn-primary">Remove Users</a>
-            <div>
-                <a asp-action="EditUsersinRole" asp-controller="ApplicationRole"
-                   asp-route-roleId="@Model.Id">Add Users or Remove Users</a>
-
-            </div>
+            <a asp-action="EditUsersinRole" asp-controller="ApplicationRole" 
+               asp-route-roleId="@Model.Id" class="btn btn-primary">Add or Remove Users</a>
         </div>
     </div>
 </form>
