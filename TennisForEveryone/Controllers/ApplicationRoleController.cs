@@ -33,10 +33,11 @@ namespace TennisForEveryone.Controllers
                 RoleName = r.Name,
                 Id = r.Id
             }).ToList();
-            var roles = roleManager.Roles;
             return View(model);
         }
 
+        [HttpGet]
+        // Get specific role to edit 
         public async Task<IActionResult> EditRole(string id)
         {
             var r = await roleManager.FindByIdAsync(id);
@@ -51,7 +52,7 @@ namespace TennisForEveryone.Controllers
                 Id = r.Id,
                 RoleName = r.Name
             };
-
+            //get all the associate users to the role -Sandipa
             foreach (var user in userManager.Users)
             {
                 if (await userManager.IsInRoleAsync(user, r.Name))
@@ -61,6 +62,32 @@ namespace TennisForEveryone.Controllers
             }
             return View(model);
         }
+
+        //Update role in database once user change/edit Role name -Sandipa
+        [HttpPost]
+        public async Task<IActionResult> EditRole(RoleViewModel model)
+        {
+            var role = await roleManager.FindByIdAsync(model.Id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                role.Name = model.RoleName;
+                var result = await roleManager.UpdateAsync(role);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(model);
+            }
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> EditUsersInRole(string roleId)
@@ -94,6 +121,8 @@ namespace TennisForEveryone.Controllers
             return View(model);
 
         }
+
+       
         [HttpPost]
         /*Added Http post request method called ‘EditUsersInRole’ 
         to be able to assign roles to users. Such as Admin, Coach, Member.(Sandipa)*/

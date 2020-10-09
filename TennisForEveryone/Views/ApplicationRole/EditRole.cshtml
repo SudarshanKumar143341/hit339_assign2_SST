@@ -1,49 +1,92 @@
 ﻿@model TennisForEveryone.Models.ViewModel.RoleViewModel
+
 @{
     ViewData["Title"] = "EditRole";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditRole</h2>
+@*<h2>EditRole</h2>
 
-<form method="post">
-    <div>
-        <h3>Role Name</h3>
-    </div>
-
-
-    <div>
-        <h3>User List</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th> User Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    @if (Model.Users.Any())
-                    {
-                        foreach (var user in Model.Users)
-                        {
-                            <td>
-                                @user
-                            </td>
-                        }
-                    }
-
-                    else
-                    {
-                        <td>No users in this role.</td>
-                    }
-                </tr>
-            </tbody>
-
-        </table>
+    <form method="post">
         <div>
-            <a asp-action="EditUsersinRole" asp-controller="ApplicationRole"
-               asp-route-roleId="@Model.Id">Add Users or Remove Users</a>
+            <h3>Role Name</h3>
+            @name
+        </div>
 
+
+        <div>
+            <h3>User List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th> User Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @if (Model.Users.Any())
+                        {
+                            foreach (var user in Model.Users)
+                            {
+                                <td>
+                                    @user
+                                </td>
+                            }
+                        }
+
+                        else
+                        {
+                            <td>No users in this role.</td>
+                        }
+                    </tr>
+                </tbody>
+
+            </table>
+            <
+        </div>
+    </form>*@
+
+
+<h1>Edit Role</h1>
+<form method="post" class="mt-3">
+    
+    <div>
+        <label asp-for="RoleName"></label>
+        <input asp-for="RoleName" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-action="Index" class="btn btn-primary">Cancel</a>
+    </div>
+    <div class="card mb-3 mt-2">
+        <div class="card-header">
+            Users in this role
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                @if (Model.Users.Any())
+                {
+                    foreach (var user in Model.Users)
+                    {
+                        <h5 class="card-text">@user</h5>
+                    }
+                }
+                else
+                {
+                    <h5 class="card-text">None at the moment</h5>
+                }
+            </h5>
+        </div>
+        <div class="card-footer">
+            <a asp-controller="application" asp-action="EditRole" class="btn btn-primary">Add User</a>
+            <a asp-controller="application" asp-action="CreateRole" class="btn btn-primary">Remove Users</a>
+            <div>
+                <a asp-action="EditUsersinRole" asp-controller="ApplicationRole"
+                   asp-route-roleId="@Model.Id">Add Users or Remove Users</a>
+
+            </div>
         </div>
     </div>
 </form>
