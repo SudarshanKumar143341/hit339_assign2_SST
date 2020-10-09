@@ -24,6 +24,8 @@ namespace TennisForEveryone.Controllers
             this.userManager = userManager;
         }
 
+
+        
         public IActionResult Index()
         {
             List<RoleViewModel> model = new List<RoleViewModel>();
@@ -133,9 +135,7 @@ namespace TennisForEveryone.Controllers
             {
                 return View("NotFound");
             }
-            //Dont know how to fix this error to add users to role
-            //ArgumentNullException: Value cannot be null. (Parameter 'user')
-            // Microsoft.AspNetCore.Identity.UserManager<TUser>.IsInRoleAsync(TUser user, string role) -- Fixed the error was an error in not populating the model through the view - Tommy
+       
             for (int i = 0; i < model.Count; i++)
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);

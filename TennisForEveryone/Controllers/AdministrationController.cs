@@ -45,7 +45,7 @@ namespace TennisForEveryone.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("createrole", "administration");
                 }
 
                 foreach (IdentityError error in result.Errors)
