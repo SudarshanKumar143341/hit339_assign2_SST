@@ -47,14 +47,14 @@
                 <td class="action">
                     @if (User.IsInRole("Admin") || User.IsInRole("Coach"))
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <p>|</p>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
                     }
 
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
                     @if (User.IsInRole("Admin"))
                     {
-                        <p>|</p>
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                     }
                 </td>
             </tr>

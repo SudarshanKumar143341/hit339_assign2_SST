@@ -114,7 +114,7 @@ namespace TennisForEveryone.Controllers
                 }
                 else
                 {
-                    userRoleViewModel.IsSelected = true;
+                    userRoleViewModel.IsSelected = false;
                 }
                 model.Add(userRoleViewModel);
             }
@@ -131,7 +131,7 @@ namespace TennisForEveryone.Controllers
             var role = await roleManager.FindByIdAsync(roleId);
             if (role == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
             //Dont know how to fix this error to add users to role
             //ArgumentNullException: Value cannot be null. (Parameter 'user')

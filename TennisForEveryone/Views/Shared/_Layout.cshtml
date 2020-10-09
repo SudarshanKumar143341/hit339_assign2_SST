@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TennisForEveryone</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -24,13 +24,13 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Schedules" asp-action="Index">Schedule</a>
+                            <a class="nav-link" asp-area="" asp-controller="Schedules" asp-action="Index">Schedule</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Coaches" asp-action="Index">Coaches</a>
+                            <a class="nav-link " asp-area="" asp-controller="Coaches" asp-action="Index">Coaches</a>
                         </li>
 
                         @if (_signInManager.IsSignedIn(User))
@@ -40,14 +40,14 @@
                             @if (User.IsInRole("Member"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ScheduleView" asp-action="Index">My Schedule</a>
+                                    <a class="nav-link" asp-area="" asp-controller="ScheduleView" asp-action="Index">My Schedule</a>
                                 </li>
                             }
 
                             @if (User.IsInRole("Coach"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ScheduleMembers" asp-action="Index">ScheduleMembers</a>
+                                    <a class="nav-link" asp-area="" asp-controller="ScheduleMembers" asp-action="Index">ScheduleMembers</a>
 
                                 </li>
                                 <li class="nav-item">
@@ -57,16 +57,16 @@
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ScheduleMembers" asp-action="Index">ScheduledMembers</a>
+                                    <a class="nav-link" asp-area="" asp-controller="ScheduleMembers" asp-action="Index">Scheduled</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ApplicationRole" asp-action="Index">Users</a>
+                                    <a class="nav-link" asp-area="" asp-controller="ApplicationRole" asp-action="Index">Roles</a>
                                 </li>
                             }
                         }
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
             </div>
