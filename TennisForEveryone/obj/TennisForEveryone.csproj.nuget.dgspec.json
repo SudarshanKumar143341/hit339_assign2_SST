@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tommy\\Desktop\\git\\hit339_assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj": {}
+    "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST3\\TennisForEveryone\\TennisForEveryone.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tommy\\Desktop\\git\\hit339_assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj": {
+    "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST3\\TennisForEveryone\\TennisForEveryone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tommy\\Desktop\\git\\hit339_assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj",
+        "projectUniqueName": "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST3\\TennisForEveryone\\TennisForEveryone.csproj",
         "projectName": "TennisForEveryone",
-        "projectPath": "C:\\Users\\Tommy\\Desktop\\git\\hit339_assign2_SST\\TennisForEveryone\\TennisForEveryone.csproj",
-        "packagesPath": "C:\\Users\\Tommy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tommy\\Desktop\\git\\hit339_assign2_SST\\TennisForEveryone\\obj\\",
+        "projectPath": "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST3\\TennisForEveryone\\TennisForEveryone.csproj",
+        "packagesPath": "C:\\Users\\sandi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sandi\\source\\repos\\hit339_assign2_SST3\\TennisForEveryone\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tommy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sandi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
