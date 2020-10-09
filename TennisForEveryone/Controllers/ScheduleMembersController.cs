@@ -205,7 +205,7 @@ namespace TennisForEveryone.Controllers
                         {
                             _context.Add(scheduleMembers);
                             await _context.SaveChangesAsync();
-                            return RedirectToAction(nameof(Index));
+                            return RedirectToAction("Index","ScheduleView");
                         }
                        return View(scheduleMembers);
                     }

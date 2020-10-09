@@ -1,5 +1,6 @@
 ﻿@model TennisForEveryone.Models.Schedule
 
+
 @{
     ViewData["Title"] = "Enroll";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -36,7 +37,10 @@
                 <input asp-for="When" class="form-control" readonly />
                 <span asp-validation-for="When" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="Id" />
+            
+            <input type="hidden" name="MemberEmail" value="@User.Identity.Name" />
+            <input type="hidden" name="ScheduleId" value="@Model.Id" />
+
             <input type="submit" value="Confirm" class="btn btn-success" /> |
             <a asp-action="Index">Go back</a>
         </form>
